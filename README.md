@@ -1,7 +1,7 @@
 Userpanel SF2 Client Api Example
 ========================
 
-This is http://panel.dsnet.agh.edu.pl client api example
+This is https://panel.dsnet.agh.edu.pl client api example. To use this, you have to browse API Docs https://panel.dsnet.agh.edu.pl/developers/ and obtain API keys from administrators
 
 How-To
 ----------------------------------
