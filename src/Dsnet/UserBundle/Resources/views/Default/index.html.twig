@@ -1,0 +1,9 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    {% if app.user %}
+        Jesteś zalogowany jako: {{ app.user.name }} {{ app.user.surname }}, <a href="{{ path('logout') }}">Wyloguj się</a>
+    {% else %}
+        <a href="{{ path('dsnet_user_connect') }}">Zaloguj się za pomocą panelu</a>
+    {% endif %}
+{% endblock %}

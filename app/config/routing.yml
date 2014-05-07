@@ -1,0 +1,6 @@
+dsnet_user:
+    resource: "@DsnetUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+logout:
+    pattern: /logout

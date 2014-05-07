@@ -1,0 +1,24 @@
+{% from '::flash.html.twig' import flash, advanced_flash, session_flash %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}
+
+            {% block flashes %}
+                {% if app.session.flashbag.peekAll|length > 0 %}
+
+                    <div>{{ session_flash() }}</div>
+
+                {% endif %}
+            {% endblock flashes %}
+            {% block content %}{% endblock %}
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,12 @@
+services:
+    dsnet_user.panel_resource_owner:
+        class: Dsnet\UserBundle\Services\PanelResourceOwner
+        arguments: ["@buzz", "@router", "%dsnet_user.config%"]
+
+    dsnet_user.security.authentication.provider:
+        class: Dsnet\UserBundle\Security\Authentication\Provider\OAuthProvider
+        arguments: ["", "@dsnet_user.panel_resource_owner", "@doctrine.orm.default_entity_manager"]
+
+    dsnet_user.security.authentication.listener:
+        class: Dsnet\UserBundle\Security\Firewall\OAuthListener
+        arguments: ["@security.context", "@security.authentication.manager", "@dsnet_user.panel_resource_owner", "@session.flash_bag"]
